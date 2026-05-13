@@ -13,7 +13,7 @@ class User implements Observer {
 
     @Override
     public void update(MarketEvent event) {
-        // Логика фильтрации: частные инвесторы могут игнорировать системные алерты (условно)
+        
         if (type == UserType.PRIVATE_INVESTOR && event instanceof MarketAlertEvent) {
             return; 
         }
